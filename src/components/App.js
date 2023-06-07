@@ -2,7 +2,7 @@ import React from 'react';
 import Main from './Main';
 import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
-import PopupImage from './PopupWithImage';
+import PopupWithImage from './PopupWithImage';
 
 
 function App() {

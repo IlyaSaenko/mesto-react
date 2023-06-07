@@ -1,41 +1,49 @@
 import React from "react";
-import avatar__link from "../images/man.jpg";
+import Card from "./Card";
+import { api } from "./Api";
 
-export default function Main() {
+export default function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
+	const [userName, setUserName] = React.useState("");
+	const [userDescription, setUserDescription] = React.useState("");
+	const [userAvatar, setUserAvatar] = React.useState("");
+	const [cards, setCards] = React.useState([]);
+
+	React.useEffect(() => {
+		Promise.all([api.getUserInfoApi(), api.getInitialCards()])
+			.then(([user, card]) => {
+				setUserName(user.name);
+				setUserDescription(user.about);
+				setUserAvatar(user.avatar);
+				setCards(card);
+				console.log(card)
+			})
+			.catch((err) => alert(err));
+	}, []);
+
 	return (
 
 		<main className="main">
-			<section className="profile" aria-label="Информация о пользователе.">
-				<div className="avatar">
-					<img src={avatar__link} alt="Фото пользователя."
-						className="avatar__img" />
+			<section className="profile" aria-label="Информация о пользователе">
+				<div className="avatar" onClick={onEditAvatar}>
+					<img src={userAvatar} alt="Фото пользователя"
+						className="profile__avatar" />
 				</div>
 
 				<div className="profile__card">
 					<div className="profile__title">
-						<h1 className="profile__name">Иван Иванов</h1>
-						<button type="button" className="profile__edit-btn"></button>
+						<h1 className="profile__name">{userName}</h1>
+						<button type="button" className="profile__edit-btn" onClick={onEditProfile}></button>
 					</div>
-					<p className="profile__sign">Путешественник</p>
+					<p className="profile__sign">{userDescription}</p>
 				</div>
-				<button type="button" className="profile__edit-btn"></button>
+				<button type="button" className="profile__edit-btn" onClick={onAddPlace}></button>
 			</section>
 
 			<section class="elements">
 				<ul class="elements__list">
-					<template id="elements-add">
-						<li class="elements__item">
-							<button class="elements__delete" type="button"></button>
-							<img class="elements__image" src="#" />
-							<div class="elements__bottom">
-								<h3 class="elements__place"></h3>
-								<div class="elements__likes">
-									<button class="elements__like" type="button" aria-label="like"></button>
-									<span class="elements__likes-quantity"></span>
-								</div>
-							</div>
-						</li>
-					</template>
+					{cards.map((card) => (
+						<Card card={card} onCardClick={onCardClick} key={card._id} />  //проверить card/elem
+					))}
 				</ul>
 			</section>
 		</main>
