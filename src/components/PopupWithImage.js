@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function PopupWithImage() {
+export default function PopupWithImage({ card, onClose }) {
   return (
-    <div class= {`popup popup_picture ${card ? "popup_opened" : ""}`}>
-        <div class="popup__container-card">
-            <button class="popup__close popup__close_photo" type="button" aria-label="Close" onClick={onClose}></button>
-            <img class="popup__image-card" src={card ? card.link : ''} alt={card ? card.name : ''}  />
-            <h2 class="popup__title-card">{card ? card.name: ''}</h2>
-        </div>
+    <div className={`popup popup_picture ${card ? "popup_opened" : ""}`}>
+      <div className="popup__container-card">
+        <button className="popup__close popup__close_photo" type="button" aria-label="Close" onClick={onClose}></button>
+        <img className="popup__image-card" src={card ? card.link : ''} alt={card ? card.name : ''} />
+        <h2 className="popup__title-card">{card ? card.name : ''}</h2>
+      </div>
     </div>
   )
 }

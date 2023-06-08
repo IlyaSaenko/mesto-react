@@ -39,8 +39,8 @@ export default function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardCl
 				<button type="button" className="profile__edit-btn" onClick={onAddPlace}></button>
 			</section>
 
-			<section class="elements">
-				<ul class="elements__list">
+			<section className="elements">
+				<ul className="elements__list">
 					{cards.map((card) => (
 						<Card card={card} onCardClick={onCardClick} key={card._id} />  //проверить card/elem
 					))}
