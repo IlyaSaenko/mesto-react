@@ -3,7 +3,7 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
-import PopupWithImage from './PopupWithImage';
+import ImagePopup from './ImagePopup';
 
 
 function App() {
@@ -125,11 +125,10 @@ function App() {
         <span className="input-avatar-error input-error"></span>
       </PopupWithForm>
 
-      <PopupWithImage
+      <ImagePopup
         card={selectedCard}
         onClose={closeAllPopups}
       />
-
     </div>
   );
 }
