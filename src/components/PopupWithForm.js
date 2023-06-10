@@ -8,7 +8,7 @@ export default function PopupWithForm({ title, name, isOpen, onClose, children }
 				autoComplete="off"
 				name={`form-${name}`}
 			>
-				<button type="button" className="popup__close button" onClick={onClose}></button>
+				<button type="button" className="popup__close" onClick={onClose}></button>
 				<h2 className="popup__name">{title}</h2>
 				<span className={`input-${name}-error input-error`}></span>
 				{children}

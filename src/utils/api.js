@@ -1,4 +1,4 @@
-import { apiConfig } from "../utils/constants";
+import { apiConfig } from "./constants";
 
 class Api {
 	constructor(config) {
@@ -18,7 +18,7 @@ class Api {
 	}
 
 	//получить данные пользователя
-	getUserInfoApi() {
+	getUserInfo() {
 		return fetch(`${this._url}/users/me`, {
 			method: "GET",
 			headers: {
@@ -28,7 +28,7 @@ class Api {
 	}
 
 	//изменить данные пользователя
-	setUserInfoApi(data) {
+	setUserInfo(data) {
 		return fetch(`${this._url}/users/me`, {
 			method: "PATCH",
 			headers: {
@@ -78,7 +78,7 @@ class Api {
 	}
 
 	//удалить конкретную карточку
-	deleteCardApi(dataId) {
+	deleteCard(dataId) {
 		return fetch(`${this._url}/cards/${dataId}`, {
 			method: "DELETE",
 			headers: {

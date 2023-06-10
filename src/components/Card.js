@@ -4,7 +4,6 @@ export default function Card({ card, onCardClick }) {
   const handleCardClick = () => onCardClick(card);
 
     return (
-    <template id="elements-add">
     <li className="elements__item">
       <img
         src={card.link}
@@ -21,6 +20,5 @@ export default function Card({ card, onCardClick }) {
         </div>
       </div>
     </li>
-    </template>
   );
 }
