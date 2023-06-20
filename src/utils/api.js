@@ -6,6 +6,7 @@ class Api {
 		this._headers = config.headers;
 		this._authorization = config.headers["authorization"];
 	}
+
 	//получить список карточек
 	getInitialCards() {
 		return fetch(`${this._url}/cards`, {
@@ -37,7 +38,7 @@ class Api {
 			},
 			body: JSON.stringify({
 				name: data.name,
-				about: data.description,
+				about: data.about,
 			}),
 		}).then((res) => this._checkResponse(res));
 	}
@@ -57,24 +58,23 @@ class Api {
 		}).then((res) => this._checkResponse(res));
 	}
 
-	//добавить лайк
-	sendLike(dataId) {
-		return fetch(`${this._url}/cards/${dataId}/likes`, {
-			method: "PUT",
-			headers: {
-				authorization: this._authorization,
-			},
-		}).then((res) => this._checkResponse(res));
-	}
-
-	//убрать лайк
-	deleteLike(dataId) {
-		return fetch(`${this._url}/cards/${dataId}/likes`, {
-			method: "DELETE",
-			headers: {
-				authorization: this._authorization,
-			},
-		}).then((res) => this._checkResponse(res));
+	//статус лайка карточки
+	changeLikeCardStatus(dataId, isLiked) {
+		if (isLiked) {
+			return fetch(`${this._url}/cards/${dataId}/likes`, {
+				method: "DELETE",
+				headers: {
+					authorization: this._authorization,
+				},
+			}).then((res) => this._checkResponse(res));
+		} else {
+			return fetch(`${this._url}/cards/${dataId}/likes`, {
+				method: "PUT",
+				headers: {
+					authorization: this._authorization,
+				},
+			}).then((res) => this._checkResponse(res));
+		}
 	}
 
 	//удалить конкретную карточку
