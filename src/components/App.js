@@ -54,7 +54,8 @@ function App() {
     api.changeLikeCardStatus(card._id, isLiked)
       .then((newCard) => {
         setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
-      });
+      })
+      .catch((err) => console.log(" Error like card", err));
   }
 
   function handleCardDelete(card) {
@@ -62,8 +63,7 @@ function App() {
       .then(() => {
         setCards(state => state.filter((c) => c._id !== card._id));
       })
-      .catch((err) => console.log("error delete card :" + err))
-      ;
+      .catch((err) => console.log("Error delete card :" + err));
   };
 
   function handleUpdateUser(value) {
@@ -72,7 +72,7 @@ function App() {
         setCurrentUser(res);
         closeAllPopups()
       })
-      .catch((err) => console.log(err))
+      .catch((err) => console.log("Error update info :" + err))
   };
 
   function handleUpdateAvatar(value) {
@@ -91,7 +91,7 @@ function App() {
         setCards([newCard, ...cards]);
         closeAllPopups();
       })
-      .catch((err) => console.log("добавлениe карточки :", err))
+      .catch((err) => console.log("Error add card :", err))
   };
 
   return (

@@ -11,7 +11,7 @@ export default function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
 	useEffect(() => {
 		setName(currentUser.name);
 		setDescription(currentUser.about);
-	}, [currentUser]);
+	}, [currentUser, isOpen]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -36,6 +36,7 @@ export default function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
 				placeholder="Ваше имя"
 				onChange={e => setName(e.target.value)}
 				name={name}
+				value={name ?? ""}
 			/>
 			<span className="input-name-error input-error"></span>
 
@@ -48,6 +49,7 @@ export default function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
 				placeholder="Вид деятельности"
 				onChange={e => setDescription(e.target.value)}
 				name={description}
+				value={description ?? ""}
 			/>
 			<span className="input-description-error input-error"></span>
 		</PopupWithForm>
