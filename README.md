@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Проект: Место React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Оглавление
 
-## Available Scripts
+- [Обзор проекта](#обзор-проекта)
+  - [Задачи проекта](#задачи-проекта)
+  - [Функциональность проекта](#функциональность-проекта)
+- [Ход выполнения проекта](#ход-выполнения-проекта)
+  - [Используемые технологии](#используемые-технологии)
+  - [приобретённый опыт](#приобретённый-опыт)
+  - [Инструкция по установке:](#инструкция-по-установке)
 
-In the project directory, you can run:
+## Обзор проекта
 
-### `npm start`
+### Задачи проекта
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Главной задачей проекта является изучение основ фреймворка React.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Функциональность проекта
+ * Редактирование профиля
+ * Добавление своих фото-карточек
+ * Удаление своих фото-карточек
+ * Возможность поставить лайк карточке
+ * Просмотр фотографии в полный экран
+ * Закрытие попапа по нажатию на фон и по нажатию на Esc
+ * Реализована валидация всех форм
+ * Все данные хранятся на сервере, использованы технологии API
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Ход выполнения проекта
 
-### `npm run build`
+### Используемые технологии
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Технологии
+![React](https://img.shields.io/badge/-React-090909?style=for-the-badge&logo=React) 
+![JavaScript](https://img.shields.io/badge/-JavaScript-090909?style=for-the-badge&logo=JavaScript)
+![Webpack](https://img.shields.io/badge/-Webpack-090909?style=for-the-badge&logo=Webpack)
+![HTML5](https://img.shields.io/badge/-HTML5-090909?style=for-the-badge&logo=HTML5)
+![CSS3](https://img.shields.io/badge/-CSS3-090909?style=for-the-badge&logo=CSS3)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Приобретённый опыт
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Использование фреймворка React
+- Работа с Create React App
+- Работа с контекстом
+- Работа с синтаксисом JSX
+- Работа с Virtual DOM
+- Работа с жизненным циклом компонентов
+- Работа с HOC
+- Работа с рефами и управляемыми компонентами
+- Обучился декларативному подходу при работе с элементами
+- Создание кастомных хуков
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Инструкция по установке:
+1. Клонировать репозиторий 
+`git clone https://github.com/Sonyamaster1/mesto-react`
+2. Установить зависимости
+`npm install`
+3. Запустить локально
+`npm start`
